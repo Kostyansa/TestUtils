@@ -29,8 +29,9 @@ public class UtilsComputeFactorialTest {
     public void testFactorialWithTimeout(){
         final Utils utils = new Utils();
         Random random = new Random();
-        assertTimeout(Duration.ofMillis(250), () -> {
-            utils.computeFactorial(random.nextInt(2500));
+        assertTimeout(Duration.ofMillis(1), () -> {
+            utils.computeFactorial(random.nextInt(2500) + 1000);
+
         });
     }
 
